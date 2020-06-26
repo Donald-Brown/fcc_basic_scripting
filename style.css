@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: #d8d8d8;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #1b1b32;
+}
+
+.header-img {
+  display: block;
+  margin: 1rem auto;
+}
+
+header h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  max-width: 40rem;
+  line-height: 1.5;
+  border-bottom: 1px solid #00471b;
+  padding-bottom: 2rem;
+}
+
+article {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+ul {
+  margin-top: 1rem;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+ul li {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+ul li:first-of-type {
+  margin-top: 2rem;
+}
