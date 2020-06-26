@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   margin: 0;
 }
@@ -11,6 +13,7 @@ html {
 body {
   font-size: 1.6rem;
   color: #1b1b32;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header-img {
@@ -28,7 +31,7 @@ header h1 {
   padding-bottom: 2rem;
 }
 
-article {
+.main-article {
   max-width: 40rem;
   margin: 0 auto;
 }
@@ -48,3 +51,6 @@ ul li {
 ul li:first-of-type {
   margin-top: 2rem;
 }
+
+
+

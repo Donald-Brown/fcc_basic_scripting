@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Convert Celsius to Fahrenheit Solution" />
+  <meta name="keywords" content="Algorithms, Free Code Camp, JavaScript" />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Celsius to Fahrenheit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <article class="solution-article">
+    <h1 class="solution-header">Basic Algorithm Scripting: Convert Celsius to Fahrenheit</h1>
+    <p class="solution-p">The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.</p>
+    <p class="solution-p">
+      You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
+    </p class="solution-p">
+    <label for="temp">Please enter a temperature in degrees Celsius</label>
+    <input id="temp" type="text" size="1">&#xb0;C
+    <button id="btn">Temp in Fahrenheit</button>
+    <div id="display" class="temp-display"></div>
+
+    <pre><code class="lang-js">
+function convertTemp() {
+//Initialize an empty message string
+let message = "";
+// Retrieve temp from user
+let temp = document.getElementById("temp").value;
+// cover the event that no temp was entered
+// if temp then convert it
+if (!temp) {
+  message = `You need to enter a temperature to convert`;
+} else {
+  temp = (temp * 9) / 5 + 32;
+  message = `The temperature in Fahrenheit is: ${temp} &#xb0;F`;
+}
+// fill the div with result
+document.getElementById("display").innerHTML = message;
+}
+// add event listener to button so the function is called when the 
+// user is ready
+document.getElementById("btn").addEventListener("click", convertTemp);
+    </code></pre>
+
+  </article>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js" integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
