@@ -13,3 +13,19 @@
   font-weight: bold;
   min-height: 3rem;
 }
+
+.solution-article {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.solution-header {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.solution-p {
+  margin-bottom: 1rem;
+  /* text-indent: 1.5rem; */
+  font-size: 1.8rem;
+}
