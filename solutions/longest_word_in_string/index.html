@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css" integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../../styles/style.css">
-  <link rel="stylesheet" href="../../styles/solutions.css">
-  <title>Find the longest word in the string</title>
-</head>
-<body>
-  <article class="solution-article">
-    <h1 class="solution-header">Find the Longest Word in a String</h1>
-    <p class="solution-p">
-      Return the length of the longest word in the provided sentence.
-      <br>
-      Your response should be a number.
-    </p>
-    <pre><code class="lang-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="../../styles/solutions.css" />
+    <title>Find the longest word in the string</title>
+  </head>
+  <body>
+    <article class="solution-article">
+      <h1 class="solution-header">Find the Longest Word in a String</h1>
+      <p class="solution-p">
+        Return the length of the longest word in the provided sentence.
+        <br />
+        Your response should be a number.
+      </p>
+      <label for="getStr"
+        >Please enter a string and I will give you the length of the longesst
+        word</label
+      >
+      <input
+        id="getStr"
+        type="text"
+        size="100"
+        value=""
+      />
+      <button id="btn">Press to get longest word length</button>
+      <div id="display" class="display"></div>
+      <pre><code class="lang-js">
 function findLongestWordLength(str) {
   let strArr = str.split(' ');
   let longest = 0;
@@ -28,12 +45,32 @@ function findLongestWordLength(str) {
   return longest;
 }
 
+function upDateUI(){
+  let string = document.getElementById('getStr').value;
+  let message = '';
+  if(string == ""){
+    message = 'You need to enter a string first';
+  }else{
+    message = `The longest word is ${findLongestWordLength(string)} characters long`;
+  }
+  document.getElementById('display').innerHTML = message;
+}
+document.getElementById('btn').addEventListener('click', upDateUI);
+
 console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); //logs 6
 console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology")); // logs 19
     </code></pre>
-  </article>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js" integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw=" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
-</body>
+    </article>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>
