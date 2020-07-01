@@ -1,11 +1,13 @@
 function confirmEnding(str, target) {
   let start = str.length - target.length;
   // return str.substring(start);
-  if(str.substring(start) == target){
-    return true;
-  }else {
-    return false;
-  }
+
+  // if(str.substring(start) == target){
+  //   return true;
+  // }else {
+  //   return false;
+  // }
+  return str.substring(start) === target;
 }
 
 function upDateUI(){
