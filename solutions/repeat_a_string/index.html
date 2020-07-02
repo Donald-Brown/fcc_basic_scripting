@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Repeat a String Repeat a String" />
+  <meta
+    name="keywords"
+    content="Algorithms, Free Code Camp, JavaScript, Repeat a String Repeat a String"
+  />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+  integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+  crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../../styles/style.css" />
+  <link rel="stylesheet" href="../../styles/solutions.css" />
+  <title>Repeat a String Repeat a String</title>
+</head>
+<body>
+  <article class="solution-article">
+    <h1 class="solution-header">
+      Repeat a String Repeat a String
+    </h1>
+    <p class="solution-p">Repeat a given string str &#40;first argument&#41; for num times &#40;second argument&#41;. Return an empty string if num is not a positive number.</p>
+    <label for="getString">Please enter a string and I'll repeat it</label>
+    <input id="getString" type="text" size="100" value="" /><br />
+    <label for="getNum">Please enter the number of times to repeat the string</label>
+    <input id="getNum" type="text" size="30" value="" />
+    <button id="btn">Press to repeat</button>
+    <div id="display" class="display"></div>
+    <pre><code class="lang-js">
+function repeatStringNumTimes(str, num) {
+  let newStr = '';
+  for(let i = num; i > 0; i--){
+    newStr += str;
+  }
+  return newStr;
+}
+
+function updateUI(){
+  let message = '';
+  let string = document.getElementById('getString').value;
+  let number = document.getElementById('getNum').value;
+
+  if(!string || !number){
+    message = 'Please enter a string and a number';
+  }else{
+    message = repeatStringNumTimes(string, number);
+  }
+  document.getElementById('display').innerHTML = message;
+}
+
+document.getElementById('btn').addEventListener('click', updateUI);
+
+console.log(repeatStringNumTimes("abc", 3));
+console.log(repeatStringNumTimes("abc", 0));
+    </code></pre>
+  </article>
+
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+</body>
+</html>
