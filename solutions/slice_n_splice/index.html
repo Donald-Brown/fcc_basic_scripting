@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Slice and Splice" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Slice and Splice"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="../../styles/solutions.css" />
+    <title>Slice and Splice</title>
+  </head>
+  <body>
+    <article class="solution-article">
+      <h1 class="solution-header">
+        Slice and Splice
+      </h1>
+      <p class="solution-p">You are given two arrays and an index.<br><br>
+
+        Use the array methods slice and splice to copy each element of the first array into the second array, in order.<br><br>
+        
+        Begin inserting elements at index n of the second array.<br><br>
+        
+        Return the resulting array. The input arrays should remain the same after the function runs.</p>
+
+      <pre><code class="lang-js">
+function frankenSplice(arr1, arr2, n) {
+  // let newArr = arr2.slice(0, n);
+  // for(let i = 0; i < arr1.length; i++){
+  //   newArr.push(arr1[i]);
+  // }
+  // let back = arr2.slice(n);
+  // for(let i = 0; i < back.length; i++){
+  //   newArr.push(back[i]);
+  // }
+  // return newArr;
+
+  // this is probably a bit better but mine works
+  let newArr = arr2.slice();
+  newArr.splice(n, 0, ...arr1);
+  return newArr;
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+console.log(frankenSplice([1, 2, 3], [4, 5], 1));
+      </code></pre>
+    </article>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

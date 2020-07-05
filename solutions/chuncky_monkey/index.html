@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="description" content="Chunky Monkey" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Chunky Monkey"
+    />
+    <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+    integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../../styles/style.css" />
+<link rel="stylesheet" href="../../styles/solutions.css" />
+  <title>Chunky Monkey</title>
+</head>
+<body>
+  <article class="solution-article">
+    <h1 class="solution-header">Chunky Monkey</h1>
+    <p class="solution-p">Write a function that splits an array &#40;first argument&#41; into groups the length of size &#40;second argument&#41; and returns them as a two-dimensional array.</p>
+    <pre><code class="lang-js">
+function chunkArrayInGroups(arr, size) {
+  let result = [];
+  let holder = [];
+  for (let i = 0; i < arr.length; i++){
+    holder.push(arr[i]);
+    if(holder.length === size){
+      result.push(holder);
+      holder = [];
+    }
+  }
+  if(holder.length > 0){
+    result.push(holder);
+  }
+  return result;
+}
+
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
+    </code></pre>
+  </article>
+  
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+  integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+  integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+  crossorigin="anonymous"
+></script>
+</body>
+</html>

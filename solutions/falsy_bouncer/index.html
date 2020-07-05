@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Falsy Bouncer" />
+  <meta
+    name="keywords"
+    content="Algorithms, Free Code Camp, JavaScript, Falsy Bouncer"
+  />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+    integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../../styles/style.css" />
+  <link rel="stylesheet" href="../../styles/solutions.css" />
+  <title>Falsy Bouncer</title>
+</head>
+<body>
+  <article class="solution-article">
+    <h1 class="solution-header">Falsy Bouncer</h1>
+    <p class="solution-p">Remove all falsy values from an array.<br><br>
+
+      Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.<br><br>
+      
+      Hint: Try converting each value to a Boolean.</p>
+      <pre><code class="lang-js">
+function bouncer(arr) {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i]){
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+  //return arr.filter(Boolean);
+}
+
+console.log(bouncer([7, "ate", "", false, 9]));
+console.log(bouncer([false, null, 0, NaN, undefined, ""]);
+console.log(bouncer([null, NaN, 1, 2, undefined]));
+      </code></pre>
+  </article>
+  
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

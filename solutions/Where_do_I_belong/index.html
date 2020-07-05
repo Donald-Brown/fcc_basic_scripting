@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Where Do I Belong" />
+  <meta
+    name="keywords"
+    content="Algorithms, Free Code Camp, JavaScript, Where Do I Belong"
+  />
+  <meta name="author" content="Donald Brown" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+    integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../../styles/style.css" />
+  <link rel="stylesheet" href="../../styles/solutions.css" />
+  <title>Where Do I Belong</title>
+</head>
+<body>
+  <article class="solution-article">
+    <h1 class="solution-header">Where Do I Belong</h1>
+    <p class="solution-p">Return the lowest index at which a value &#40;second argument&#41; should be inserted into an array &#40;first argument&#41; once it has been sorted. The returned value should be a number.<br><br>
+
+      For example, getIndexToIns&#40;&#91;1,2,3,4&#93;, 1.5&#41; should return 1 because it is greater than 1 &#40;index 0&#41;, but less than 2 &#40;index 1&#41;.<br><br>
+      
+      Likewise, getIndexToIns&#40;&#91;20,3,5&#93;, 19&#41; should return 2 because once the array has been sorted it will look like &#91;3,5,20&#93; and 19 is less than 20 &#40;index 2&#41; and greater than 5 &#40;index 1&#41;.</p>
+      <pre><code class="lang-js">
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  arr.sort((a,b) => a-b);
+  return arr.indexOf(num);
+}
+
+console.log(getIndexToIns([40, 60], 50));
+console.log(getIndexToIns([5, 3, 20, 3], 5));
+console.log(getIndexToIns([10, 20, 30, 40, 50], 30));
+      </code></pre>
+  </article>
+  
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Mutations" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Mutations"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="../../styles/solutions.css" />
+    <title>Mutations</title>
+  </head>
+  <body>
+    <article class="solution-article">
+      <h1 class="solution-header">Mutations</h1>
+      <p class="solution-p">
+        Return true if the string in the first element of the array contains all
+        of the letters of the string in the second element of the array.<br /><br />
+
+        For example, &#91;"hello", "Hello"&#93;, should return true because all
+        of the letters in the second string are present in the first, ignoring
+        case.<br /><br />
+
+        The arguments &#91;"hello", "hey"&#93; should return false because the
+        string "hello" does not contain a "y".<br /><br />
+
+        Lastly, &#91;"Alien", "line"&#93;, should return true because all of the
+        letters in "line" are present in "Alien".
+      </p>
+      <pre><code class="lang-js">
+function mutation(arr) {
+  let arr2 = arr[0].toLowerCase();
+  let arr3 = arr[1].toLowerCase();
+  for(let i = 0; i < arr3.length; i++){
+    if(!arr2.includes(arr3[i])){
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(mutation(["hello", "hey"]));
+console.log(mutation(["hello", "Hello"]));
+          </code></pre>
+    </article>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

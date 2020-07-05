@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Truncate a String" />
+    <meta
+      name="keywords"
+      content="Algorithms, Free Code Camp, JavaScript, Truncate a String"
+    />
+    <meta name="author" content="Donald Brown" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-coy.min.css"
+      integrity="sha256-VcuSs+n31yebPlEcehu6PvnidJ808ScFBsK8+tJKX+Q="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <link rel="stylesheet" href="../../styles/solutions.css" />
+    <title>Trucate a String</title>
+  </head>
+  <body>
+    <article class="solution-article">
+      <h1 class="solution-header">Truncate a String</h1>
+      <p class="solution-p">Truncate a string &#40;first argument&#41; if it is longer than the given maximum string length &#40;second argument&#41;. Return the truncated string with a ... ending.</p>
+      <label for="getString"
+        >Please enter a string and I will truncste it at the length you
+        specify</label
+      >
+      <input id="getString" type="text" size="100" value="" /><br />
+      <label for="getNum">Please enter a length to truncate</label>
+      <input id="getNum" type="text" size="10" value="" />
+      <button id="btn">Press To Truncate</button>
+      <div id="display" class="display"></div>
+      <pre><code class="lang-js">
+function truncateString(str, num) {
+  if(num < str.length){
+    // this also works
+    // str.aubstring(0,num) + '...';
+    return str.slice(0, num) + "...";
+  }
+  return str;
+}
+
+function udateUI(){
+  let string = document.getElementById('getString').value;
+  let number = document.getElementById('getNum').value;
+  let message = '';
+
+  if(!string || !number){
+    message = 'Please enter a string and a length to truncate';
+  }else{
+    message = truncateString(string, number);
+  }
+
+  document.getElementById('display').innerHTML = message;
+}
+
+document.getElementById('btn').addEventListener('click', udateUI);
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+console.log(
+  truncateString(
+    "A-tisket a-tasket A green and yellow basket",
+    "A-tisket a-tasket A green and yellow basket".length + 2
+  )
+);
+console.log(truncateString("A-", 1));
+      </code></pre>
+    </article>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"
+      integrity="sha256-9h14mWYYiQGkeAKg2JtijbqApb56kgw57WN6sI6dwH0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha256-3S2PESHNt0YNL65z57WuHPHIv12fibpBDXepyCGHftw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
